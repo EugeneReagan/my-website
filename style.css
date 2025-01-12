@@ -1,0 +1,265 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: white;
+    color: black;
+}
+
+/* Brand Section Styles */
+.brand-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo img {
+    height: 40px;
+}
+
+.brand-name {
+    margin-left: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url('img/me.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 60px; /* Adjust margin for the fixed header */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#00BFFF;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 100; /* Ensure it's on top */
+    color: white;
+    width: 300px;
+}
+
+.popup-message img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.popup-message p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background-color: lightgray;
+}
+
+/* Disable scrolling when popup is active */
+body.popup-active {
+    overflow: hidden;
+}
+
+/* Menu Section Styles */
+.menu-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    text-align: center;
+    color: white;
+    margin: 10px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.menu-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+/* Employee Levels Section Styles */
+.employee-levels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('img/aa.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+.vip-level {
+    text-align: center;
+    color: white;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1 1 calc(25% - 40px); /* Adjust as needed */
+}
+
+.vip-level img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* Navigation/Footer Styles */
+.navigation-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-item {
+    text-align: center;
+    color: white;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.nav-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .brand-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-section, .employee-levels, .navigation-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item, .vip-level {
+        flex: 1 1 100%;
+        margin: 5px 0;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        overflow: hidden;
+        z-index: 1;
+        margin-top: 60px; /* Adjust margin for the fixed header */
+    }
+
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-name, .menu-item span, .vip-level h3, .vip-level ul {
+        font-size: 14px;
+    }
+
+    .vip-level img, .menu-item img, .nav-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        overflow: hidden;
+        z-index: 1;
+        margin-top: 60px; /* Adjust margin for the fixed header */
+    }
+
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
